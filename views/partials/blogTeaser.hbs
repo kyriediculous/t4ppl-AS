@@ -1,0 +1,39 @@
+<div class="blog-entry">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <a href="/blog/post/{{this.fields.slug}}/{{this.sys.id}}"><h3 class="blog-title">{{this.fields.title}}</h3></a>
+        <div class="blog-authordate">
+            <p class="blog-author">{{this.fields.author.fields.name}}<br>
+            <span class="blog-date">{{#dateFormat this.fields.date}}{{this}}{{/dateFormat}}</span></p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+        <div class="media">
+          {{#if this.fields.images.0.fields.file.url}}
+            <div class="media-left hidden-xs" class="featuredimage">
+              <img src="{{{this.fields.images.0.fields.file.url}}}" alt="{{{this.fields.images.0.fields.title}}}" width="200" height="100" />
+            </div>
+            {{/if}}
+            <div class="media-body">
+              <p>
+                {{#if this.fields.teaser}}
+              {{this.fields.teaser}}
+                {{else}}
+                {{#blogTease this.fields.text}}
+                  {{{this}}}
+                  {{/blogTease}}
+                {{/if}}
+              ...</p>
+            <div class="blog-readmore">
+                <a href="/blog/post/{{this.fields.slug}}/{{this.sys.id}}">Lees meer over {{#if this.fields.leesMeerOver}}
+                {{this.fields.leesMeerOver}}
+                  {{else}}
+                {{this.fields.title}}
+              {{/if}}</a>
+            </div>
+           </div>
+        </div>
+    </div>
+</div>
+</div>

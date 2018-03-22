@@ -1,0 +1,16 @@
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form method="POST">
+            <h1 >Wachtwoord Vergeten</h1>
+            <hr />
+            {{> flashmessages}}
+            <p>
+              Vul het e-mailadres van je account in, hierna ontvang je een e-mail met een link waarmee je je wachtwoord opnieuw kan instellen.
+            </p>
+            <label for="inputEmail" class="sr-only">E-mail adres</label>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="JohnDoe@voorbeeld.com" required autofocus>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Nieuw wachtwoord aanvragen</button>
+          </form>
+        </div>
+      </div>

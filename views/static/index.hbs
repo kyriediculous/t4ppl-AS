@@ -1,0 +1,40 @@
+
+
+
+
+    <!-- main content from Contentful -->
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+                    {{> flashmessages}}
+        <h1>{{entry.fields.titel}}</h1>
+        <hr />
+        <div class="content-section">
+          {{{entry.fields.body}}}
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+      <p>
+        Inhoud Kennisplatform <button type="button" class="btn" data-toggle="collapse" data-target="#overKennisplatform"><span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+      </p>
+  <div id="overKennisplatform" class="collapse">
+    {{{entry.fields.additional}}}
+  </div>
+    </div>
+  </div>
+    <div class="row">
+      {{#if user}}
+        {{#if user.stripe.plan}}
+        <div class="text-center">
+          <a href="#" target="_blank" class="btn btn-danger">Naar Kennisplatform</a>
+        </div>
+        {{else}}
+        {{> paymentForm}}
+        {{/if}}
+      {{else}}
+      <div class="text-center">
+        <a href="/auth/signup" class="btn btn-primary">Registreer</a>
+      </div>
+      {{/if}}
+    </div>

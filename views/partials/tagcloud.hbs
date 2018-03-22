@@ -1,0 +1,5 @@
+<div id="blogcloud" data-spy='affix'>
+  {{#each categories.items}}
+    <a href="/blog/category/{{this.sys.id}}?page=1" rel={{this.fields.posts.length}}>{{this.fields.category}}({{this.fields.posts.length}})</a>
+    {{/each}}
+</div>

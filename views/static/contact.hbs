@@ -1,0 +1,33 @@
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+          {{> flashmessages}}
+      <h1>{{entry.fields.titel}}</h1>
+      <hr />
+
+        {{{entry.fields.body}}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+      <form action="/contact" method="post">
+        <label for="inputName">Naam</label>
+        <input type="text" name="name" id="inputName" class="form-control" required />
+        <label for="inputEmail">E-mail adres</label>
+        <input type="email" name="email" id="inputEmail" class="form-control" required />
+        <label for="inputCompany">Bedrijf</label>
+        <input type="text" name="company" id="inputCompany" class='form-control' />
+        <label for="inputComment">Uw vraag / opmerking</label>
+        <textarea name="comment" id="inputComment" class="form-control" required></textarea>
+        <span id="remainingC"></span>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Verzenden</button>
+      </form>
+    </div>
+    </div>
+  <script>
+    $('#inputComment').keypress(function(){
+      if(this.value.length > 2000 ){
+        return $("#remainingC").html((this.value.length-2000) + " karakters teveel").addClass('red');
+      } $("#remainingC").html((2000 - this.value.length)+ " karakters resterend");
+    });
+  </script>

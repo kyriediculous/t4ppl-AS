@@ -1,0 +1,16 @@
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form class="form-signin" action="/auth/login" method="POST">
+            <h1 class="form-signin-heading">Log In</h1>
+            <hr />
+            {{> flashmessages}}
+            <label for="inputEmail">E-mail adres</label>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="E-mail adres" required autofocus>
+            <label for="inputPassword">Wachtwoord</label>
+            {{> passwordField}}
+            <a class="forgotpassword" href="/auth/forgot">Wachtwoord vergeten?</a>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Inloggen</button>
+          </form>
+        </div>
+      </div>

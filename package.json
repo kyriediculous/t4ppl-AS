@@ -1,0 +1,53 @@
+{
+  "name": "tech4people",
+  "version": "1.0.0",
+  "engines": {
+    "node": "8.7.0",
+    "npm": "5.5.1"
+  },
+  "description": "Website for technology for people made with Contentful CMS using GraphQL and React",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Technology4People",
+    "KnowledgeBase",
+    "Wiki",
+    "Technology",
+    "Programming",
+    "Website"
+  ],
+  "author": "Alt Street BVBA",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "bcrypt-nodejs": "latest",
+    "body-parser": "1.18.2",
+    "compression": "^1.7.1",
+    "concurrently": "^3.5.0",
+    "connect-flash": "~0.1.1",
+    "contentful": "^5.0.2",
+    "cookie-parser": "~1.0.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-session": "~1.0.0",
+    "handlebars-paginate": "^0.1.0",
+    "hbs": "^4.0.1",
+    "helmet": "^3.9.0",
+    "json-stringify-safe": "^5.0.1",
+    "localtunnel": "^1.8.3",
+    "markdown-it": "^8.4.0",
+    "marked": "^0.3.6",
+    "method-override": "~1.0.0",
+    "mongoose": "~4.4",
+    "mongoose-timestamp": "^0.6.0",
+    "open": "0.0.5",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "sendgrid": "^5.2.3",
+    "serve-favicon": "^2.4.5",
+    "stripe": "^5.3.0",
+    "stripe-webhook-middleware": "^0.2.0"
+  }
+}

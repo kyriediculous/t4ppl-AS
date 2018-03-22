@@ -1,0 +1,32 @@
+<nav class="navbar ">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/"><img src="/img/logo.png" width="95" height="78" alt="naar homepagina"/></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        {{#if user}}
+          {{#if user.stripe.plan}}
+          <li>
+            <a href="/kennisplatform" class="btn btn-danger" target="_blank">Naar Kennisplatform</a>
+          </li>
+          {{/if}}
+          <li><a class="profile-nav" href="/auth/profile"><span class="glyphicon glyphicon-user"></span>Account</a></li>
+          <li>
+             <a class="logout-nav" href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+          </li>
+        {{else}}
+        <li><a href="/auth/login"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+        <li><a class="signup-nav" href="/auth/signup">Registreer</a></li>
+        {{/if}}
+        <li><a class="contact-nav" href="/contact">Contact</a></li>
+        <li><a class="about-nav" href="/about">Over Mij</a></li>
+        <li><a class="terms-nav" href="/terms">Alg. Voorwaarden</a></li>
+        <li><a class="privacy-nav" href="/privacy">Privacy</a></li>
+      </ul>
+    </div>
+</nav>

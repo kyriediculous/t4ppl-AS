@@ -1,0 +1,85 @@
+
+      {{> flashmessages}}
+      <h1>Account</h1>
+      <hr />
+    	<div class="row">
+            <div class="col-lg-12 col-md-12  as-vertical-tab-container">
+                <div class="col-lg-3 col-md-3  as-vertical-tab-menu">
+                  <div class="list-group">
+                    <a href="#" class="list-group-item active text-center">
+                      <h4 class="glyphicon glyphicon-user"></h4><br/>Gegevens
+                    </a>
+                    <a href="#" class="list-group-item text-center">
+                      <h4 class="glyphicon glyphicon-envelope"></h4><br/>E-Mail
+                    </a>
+                    <a href="#" class="list-group-item text-center">
+                      <h4 class="glyphicon glyphicon-lock"></h4><br/>Wachtwoord
+                    </a>
+                    <a href="#" class="list-group-item text-center">
+                      <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Abbonement
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 as-vertical-tab">
+                    <!-- profile section -->
+                    <div class="as-vertical-tab-content active">
+                      <form class="form-signin" action="/auth/profile/updateUser" method="POST">
+                        <h2 class="form-signin-heading">Gegevens wijzigen</h2>
+                        <label for="inputName" >Naam</label>
+                        <input type="text" name="name" id="inputName" class="form-control" value="{{user.name}}">
+                        <label for="inputTel" >Telefoon</label>
+                        <input type="tel" name="telephone" id="inputTel" class="form-control" value="{{user.telephone}}" />
+                        <label for="inputCompany">Bedrijf</label>
+                        <input type="text" name="company" id="inputCompany" class="form-control" value="{{user.company}}"  />
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Opslaan</button>
+                        <a href="#" onclick="deleteAccount()">Account permanent verwijderen?</a>
+                      </form>
+
+                      <script>
+                      function deleteAccount(){
+                        var ask = window.confirm("Ben je zeker dat je je account permanent wil verwijderen?");
+                        if (ask) {
+                          window.location.href = "/auth/remove-account";
+                        }
+                      }
+                      </script>
+                    </div>
+                    <!-- email section -->
+                    <div class="as-vertical-tab-content">
+                      <form class="form-signin" action="/auth/profile/updateEmail" method="POST">
+                        <h2 class="form-signin-heading">Email Wijzigen</h2>
+                        <label for="inputEmail" >Email</label>
+                        <input type="email" name="email" id="inputEmail" class="form-control" value="{{user.email}}" required>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Opslaan</button>
+                      </form>
+                    </div>
+                    <!-- password section -->
+                    <div class="as-vertical-tab-content">
+                      <form class="form-signin" action="/auth/profile/changePassword" method="POST">
+                        <h2 class="form-signin-heading">Wachtwoord Wijzigen</h2>
+                        <label for="inputOld" >Oud Wachtwoord</label>
+                        <input type="password" name="old" id="inputOld" class="form-control" placeholder="Oud wachtwoord" required>
+                        <label for="inputNew">Nieuw Wachtwoord</label>
+                        <input type="password" name="new" id="inputNew" class="form-control" placeholder="Nieuw Wachtwoord" required />
+                        <label for="inputNew2">Nieuw Wachtwoord Bevestigen</label>
+                        <input type="password" name="new2" id="inputNew2" class="form-control" placeholder="Nieuw Wachtwoord Bevestigen" required />
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Opslaan</button>
+                      </form>
+                    </div>
+                    <!-- Subscription section -->
+                    <div class="as-vertical-tab-content">
+                        <center>
+                          {{#if user.stripe.subscriptionId}}
+                          <p>
+                             Klik hier om je abonnement op te zeggen. Je kaart wordt vanaf volgende betaalcyclus niet meer gefactureerd, tot die datum blijft je de toegang tot het kennisplatform behouden.
+                          </p>
+                          <a href="/auth/profile/subscription/cancel" class="btn btn-danger" id="cancelSub">Abonnement Opzeggen</a>
+                          {{else}}
+                          {{> paymentForm}}
+                          {{/if}}
+                        </center>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>

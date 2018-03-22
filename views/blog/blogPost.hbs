@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    {{> flashmessages}}
+      <h1>{{post.fields.title}}</h1>
+      <hr />
+    <div class="content-section">
+      <button class="btn btn-info backbutton" onclick="goBack()">Vorige</button>
+      <a class="btn btn-primary backbutton" href="/blog?page=1">Terug naar overzicht blogs</a>
+          {{{post.fields.text}}}
+          <script>
+          function goBack() {
+            window.history.back();
+          }
+          </script>
+    </div>
+  </div>
+</div>
