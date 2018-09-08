@@ -68,7 +68,7 @@
     // Sizes
     var fontIncr, colorIncr;
     if (opts.size) {
-      fontIncr = (opts.size.end - opts.size.start)/range;
+      fontIncr = (opts.size.end - opts.size.start)/(range*0.80);
     }
     // Colors
     if (opts.color) {

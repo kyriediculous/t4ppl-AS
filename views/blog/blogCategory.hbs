@@ -25,6 +25,9 @@
         <div class="panel panel-default">
           <div class="panel-heading">
               <a href="/blog/post/{{this.fields.slug}}/{{this.sys.id}}"><h3 class="blog-title">{{this.fields.title}}</h3></a>
+              <span class="categories-list">
+
+              </span>
               <div class="blog-authordate">
                   <p class="blog-author">{{this.fields.author.fields.name}}<br>
                   <span class="blog-date">{{#dateFormat this.fields.date}}{{this}}{{/dateFormat}}</span></p>

@@ -119,8 +119,8 @@ $(document).ready(function() {
 
     //TAGCLOUD
     $.fn.tagcloud.defaults = {
-      size: {start: 9, end: 15, unit: 'pt'},
-      color: {start: '#a5a5a5', end: '#f75e5b'}
+      size: {start: 9, end: 12, unit: 'pt'},
+      color: {start: '#0033cc', end: '#cc6600'}
     };
 
     $(function () {

@@ -10,7 +10,7 @@ const MarkdownIt = require('markdown-it'),
 router.get('/', (req, res) => {
   Promise.all([getPosts(req.query.page), getCats()])
     .then( ([posts, categories]) => {
-      console.log(categories)
+      console.log(posts.items[3].fields.categories)
       categories.items = categories.items.filter(cat => cat.fields.posts)
       res.render('blog/blogIndex',{
         posts: posts,
@@ -51,7 +51,7 @@ router.get('/category/:cat_id',  (req ,res) => {
     .then( ([posts, categories]) => {
       categories.items = categories.items.filter(cat => cat.fields.posts)
 
-      console.log(posts.items[0].fields)
+      console.log(posts.includes.Entry)
       let postsArray = posts.includes.Entry
 
        postsArray.forEach(post => {
@@ -59,6 +59,8 @@ router.get('/category/:cat_id',  (req ,res) => {
           post.fields["thumbnail"] = posts.includes.Asset.find(asset => asset.sys.id == post.fields.images[0].sys.id)
         }
       })
+
+
       res.render('blog/blogCategory',{
         posts: posts.items[0].fields.posts.slice((req.query.page-1)*3, req.query.page*3),
         category: posts.items[0],
@@ -101,6 +103,7 @@ function getPosts (page){
   return client.getEntries({
     'content_type': 'blogPost',
      order: '-fields.date',
+     'include': 2,
      limit: 3*page,
      skip: 3*(page-1)
   });
@@ -131,6 +134,6 @@ function getCat (cat_id){
   return client.getEntries({
     'content_type': 'categories',
     'sys.id': cat_id,
-    'include':1
+    'include':3
   });
 }
