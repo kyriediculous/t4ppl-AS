@@ -2,16 +2,31 @@
   <div class="col-md-10 col-md-offset-1">
     {{> flashmessages}}
       <h1>{{post.fields.title}}</h1>
-      <hr />
-    <div class="content-section">
-      <button class="btn btn-info backbutton" onclick="goBack()">Vorige</button>
-      <a class="btn btn-primary backbutton" href="/blog?page=1">Terug naar overzicht blogs</a>
-          {{{post.fields.text}}}
-          <script>
-          function goBack() {
-            window.history.back();
-          }
-          </script>
+
+  </div>
+  <div class="col-md-3 col-md-offset-8 right">
+      <a style="margin-top:10px" href="#" onclick="goBack()">Vorige Pagina</a>
+      <br />
+      <a style="margin-bottom:10px" href="/blog?page=1">Terug naar overzicht blogs</a>
+      <script>
+      function goBack() {
+        window.history.back();
+      }
+      </script>
+  </div>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="content-section" style="margin-top:10px;">
+      {{{post.fields.text}}}
     </div>
+  </div>
+  <div class="col-md-3 col-md-offset-8 right">
+      <a class="" href="#" onclick="goBack()">Vorige</a>
+      <br />
+      <a class="" href="/blog?page=1">Terug naar overzicht blogs</a>
+      <script>
+      function goBack() {
+        window.history.back();
+      }
+      </script>
   </div>
 </div>

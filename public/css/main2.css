@@ -42,6 +42,9 @@ h2,h3,h4,h5,h6 {
   color:red;
 }
 
+.right {
+  text-align:right;
+}
 
 #eye {
   position: relative;
@@ -213,20 +216,20 @@ left:0;
 
 #blog-main>a>p {
   position:absolute;
-  top:78px;
+  top:88px;
   right:135px;
 }
 
 #diensten-main>a>p {
   position:absolute;
-  left:130px;
+  left:125px;
   top:75px;
 
 }
 
 #tools-main>a>p {
   position:absolute;
-  left:110px;
+  left:100px;
   top:65px;
 }
 

@@ -35,6 +35,7 @@ hbs.registerHelper('dateFormat', (timestamp) => {
   time = new Date(timestamp);
   return time.toLocaleDateString('en-GB');
 });
+hbs.registerHelper('stringify', obj => JSON.stringify(obj, null, 2))
 hbs.registerHelper('paginate', paginate);
 
 app.set('view cache', true);
@@ -65,6 +66,8 @@ function ensureAuthenticatedForWiki(req, res, next) {
     res.redirect('/auth/login');
   }
 }
+app.use('/testversie', express.static(path.join(__dirname, 'testversie')))
+
 /* _________________________________
           ROUTES GO HERE
   ________________________________ */
