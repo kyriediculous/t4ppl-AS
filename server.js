@@ -13,7 +13,7 @@ const express       = require('express'),
       helmet        = require('helmet'),
       compression   = require('compression'),
       cors          = require('cors'),
-      stripe        = require("stripe")("sk_test_KHbW9OyxE28mtFBLc3epeggJ"),
+      stripe        = require("stripe")("sk_test_8wnpQt7VLJCp8mf1JmPN1Dzp"),
       hbs           = require('hbs'),
       paginate      = require('handlebars-paginate');
 

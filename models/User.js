@@ -7,19 +7,11 @@ const mongoose = require('mongoose'),
         apiKey: 'sk_test_8wnpQt7VLJCp8mf1JmPN1Dzp',  //Process.ev....
         stripePubKey: 'pk_test_NPnxAy3RQSO93ZvBE3GJZpO1', //process.env.STRIPE_PUBLIC_KEY
         defaultPlan: '',
-        plans: ['monthly', 'quarterly', 'yearly'],
+        plans: ['monthly'],
         planData: {
           'monthly': {
             name : 'monthly',
-            price: 9.99
-          },
-          'quarterly': {
-            name : 'quarterly',
-            price: 25.99
-          },
-          'yearly': {
-            name: 'yearly',
-            price: 99.99
+            price: 10.00
           }
         }
       }
