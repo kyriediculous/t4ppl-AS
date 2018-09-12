@@ -1,5 +1,5 @@
 const port          =  process.env.PORT || '3000',
-      mongodbURI    =  process.env.MONGODB_URI || 'mongodb://heroku_ffdvbshq:viqp6vbkaprlm1ks363k6kt72@ds249605.mlab.com:49605/heroku_ffdvbshq';
+      mongodbURI    =  process.env.MONGODB_URI || 'mongodb://heroku_r812m4xx:l206jc0002esdp2oaup0igdvqp@ds155352.mlab.com:55352/heroku_r812m4xx';
 
 const express       = require('express'),
       mongoose      = require('mongoose'),
