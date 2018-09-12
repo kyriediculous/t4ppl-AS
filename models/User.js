@@ -5,7 +5,7 @@ const mongoose = require('mongoose'),
 
       stripeOptions = {
         apiKey: 'sk_test_KHbW9OyxE28mtFBLc3epeggJ',  //Process.ev....
-        stripePubKey: 'pk_test_Ai0iuE84gwl1OwGUCrZaQQ1n', //process.env.STRIPE_PUBLIC_KEY
+        stripePubKey: 'pk_test_NPnxAy3RQSO93ZvBE3GJZpO1', //process.env.STRIPE_PUBLIC_KEY
         defaultPlan: '',
         plans: ['monthly', 'quarterly', 'yearly'],
         planData: {
