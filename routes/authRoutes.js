@@ -61,7 +61,7 @@ router.post('/subscription', function(req, res) {
         }).then( (customer) =>
           stripe.subscriptions.create({
             customer: customer.id,
-            items: [{prod:"prod_DakAnMIfJAL1Vr"}]
+            items: [{plan:'plan_DakA6bHBr3ll0T'}]
           })).then( (subscription) => {
           user.stripe = {
             customerId: subscription.customer,
