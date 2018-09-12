@@ -10,7 +10,6 @@ const MarkdownIt = require('markdown-it'),
 router.get('/', (req, res) => {
   Promise.all([getPosts(req.query.page), getCats()])
     .then( ([posts, categories]) => {
-      console.log(posts.items[3].fields.categories)
       categories.items = categories.items.filter(cat => cat.fields.posts)
       res.render('blog/blogIndex',{
         posts: posts,
