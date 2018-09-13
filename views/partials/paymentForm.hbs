@@ -2,7 +2,7 @@
   <form action="/auth/subscription" method="POST">
     <h4>Abbonneer je nu voor slechts €9.99 per maand</h4>
     <p>
-      Uw kredietkaard wordt elke maand automatisch belast.
+      Uw kredietkaart wordt elke maand automatisch belast.
     </p>
     <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -15,7 +15,13 @@
     data-zip-code="true"
     data-billing-address="true"
     data-currency="eur"
+    data-panel-label="Abonneer"
     data-email={{user.email}}>
+  </script>
+  <button type="sumbit" class="btn btn-primary">Abonneer Nu</button>
+
+  <script>
+    document.getElementsByClassName('stripe-button-el')[0].style.display='none';
   </script>
 </form>
 </div>
