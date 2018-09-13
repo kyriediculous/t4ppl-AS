@@ -6,7 +6,11 @@
         <h1>{{entry.fields.titel}}</h1>
         <hr />
         {{#if user}}
-        {{#if user.stripe.plan==null}}
+        {{#if user.stripe.plan}}
+          <div>
+
+          </div>
+          {{else}}
           {{> paymentForm}}
         {{/if}}
         {{/if}}
