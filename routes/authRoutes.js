@@ -134,7 +134,7 @@ router.post('/login', function(req, res, next) {
     if (err) { return next(err); }
     if (!user) {
       req.flash('error', 'Ongeldig e-mail adres of wachtwoord.')
-      return res.redirect('/login');
+      return res.redirect('/');
    }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
