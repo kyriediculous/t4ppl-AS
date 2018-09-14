@@ -138,8 +138,6 @@ router.post('/login', function(req, res, next) {
    }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
-      var opn = require('opn')
-      opn('http://tech4people.herokuapp.com/kennisplatform/Watiseenuserinterface.html')
       var firstname = req.user.name.split(" ")[0]
       req.flash('success', 'Welkom terug, ' + firstname)
       return res.redirect('/');
