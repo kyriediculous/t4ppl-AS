@@ -128,13 +128,24 @@ router.get('/login', function(req, res){
   });
 });
 
-router.post('/login',
-  passport.authenticate('local',
-  { successRedirect: '/',
-    failureRedirect: '/auth/login',
-    badRequestMessage: 'Invalid username or password',
-    failureFlash: true })
-);
+
+router.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) { return next(err); }
+    if (!user) {
+      req.flash('error', 'Ongeldig e-mail adres of wachtwoord.')
+      return res.redirect('/login');
+   }
+    req.logIn(user, function(err) {
+      if (err) { return next(err); }
+      var opn = require('opn')
+      opn('http://tech4people.herokuapp.com/kennisplatform/Watiseenuserinterface.html')
+      var firstname = req.user.name.split(" ")[0]
+      req.flash('success', 'Welkom terug, ' + firstname)
+      return res.redirect('/');
+    });
+  })(req, res, next);
+});
 
 router.get('/signup', (req, res) => {
   res.render('auth/signup', {
