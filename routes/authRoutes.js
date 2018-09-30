@@ -211,7 +211,8 @@ router.post('/signup', (req, res) => {
               var subject = 'Email Bevestigen';
               var content = new helper.Content('text/plain', 'Bedankt om je te registreren op Technology4People.\n\n' +
                   'Gelieve op de volgende link te klikken om je email te bevestigen:\n\n' +
-                  'http://' + req.headers.host + '/auth/signup/confirm/' + token + '\n\n');
+                  'http://' + req.headers.host + '/auth/signup/confirm/' + token + '\n\n' +
+                  'Na het bevestigen van je e-mail adres krijgt u de mogelijkheid u te abonneren op het kennisplatform.');
               var mail = new helper.Mail(from_email, subject, to_email, content);
 
               var request = sg.emptyRequest({
