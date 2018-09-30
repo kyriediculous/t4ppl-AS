@@ -8,7 +8,12 @@
         {{#if user}}
         {{#if user.stripe.plan}}
           <div>
-
+            <script>
+            var newtab
+            if (!newtab) {
+              newtab= window.open("http://localhost:3000/kennisplatform/Watiseenuserinterface.html", '_blank').focus();
+            }
+            </script>
           </div>
           {{else}}
           {{> paymentForm}}

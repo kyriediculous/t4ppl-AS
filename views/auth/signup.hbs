@@ -5,6 +5,11 @@
           <form  action="/auth/signup" method="POST">
             <h1 >Registeren</h1>
             <hr />
+            <div class="alert alert-info" role="alert">
+              <i class="glyphicon glyphicon-info-sign"></i> Na registratie ontvangt u een e-mail om uw account te bevestigen.
+              <strong>
+                 Nadien heeft u de mogelijkheid een abonnement te nemen voor toegang tot het kennisplatform</strong>
+            </div>
             {{> flashmessages}}
             <label for="inputEmail">E-mail adres</label>
             <input type="email" name="email" id="inputEmail" class="form-control" placeholder="JohnDoe@voorbeeld.com" required autofocus>
@@ -18,7 +23,6 @@
             <input type="tel" name="telephone" id="inputTelephone" class="form-control" placeholder="+32 XXX XXX XXX" />
             <div><input type="checkbox" name="emailCorrect" value="true" required>  Ik bevestig dat mijn e-mailadres correct is.</div>
             <div><input type="checkbox" name="privacy" value="true" required> Ik ga akkoord met de <a href="/terms">algemene voorwaarden</a> en <a href="/privacy">privacyverklarking</a></div>
-            <p>Na registratie ontvangt u een email ter confirmatie van uw account</p>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Registreer</button>
           </form>
           {{privacy}}
