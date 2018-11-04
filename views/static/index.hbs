@@ -10,7 +10,7 @@
           <div>
             <script>
             var newtab = window.open("http://tech4people.herokuapp.com/kennisplatform/Watiseenuserinterface.html", 't4ppl_kennisplatform_login', '_blank')
-            if (newtab) {
+            if (newtab.window) {
               newtab.focus()
             } else {
               alert('Gelieve pop-ups toe te staan indien u na het inloggen onmiddelijk naar het kennisplatform wil worden doorverwezen')
