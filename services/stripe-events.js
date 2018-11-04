@@ -23,6 +23,8 @@ module.exports.fireEvent = function(event, done){
       }
     });
 
+  } else {
+    done(null, true)
   }
 
 };

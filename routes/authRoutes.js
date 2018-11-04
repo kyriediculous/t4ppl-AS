@@ -21,6 +21,9 @@ router.post("/webhooks", (req, res) => {
   stripeEvents.fireEvent(event, (err, user) => {
     if (user) {
       res.json({received: true});
+      res.send(200);
+    } else {
+      res.send(200);
     }
   })
 });
