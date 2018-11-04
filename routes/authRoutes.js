@@ -30,8 +30,8 @@ router.post("/webhooks", (req, res) => {
 
 //STRIPE CREATE CHARGE
 router.post('/subscription', async function(req, res) {
-  var plans = await stripe.plans.list
-  var plan = plans.find(p => p.nickname === "Monthly")
+  var plans = await stripe.plans.list()
+  var plan = plans.data.find(p => p.nickname === "Monthly")
     User.findOne({email:req.body.stripeEmail},(err, user)=>{
       if (err) {
         req.flash('error', 'Er ging iets mis, probeer het later opnieuw');
@@ -128,7 +128,6 @@ router.get('/profile/subscription/cancel', (req, res) => {
 
 //AUTHENTICATION ROUTES
 router.get('/login', async function(req, res){
-  console.log(await stripe.plans.list())
   res.render('auth/login', {
     messages: req.flash()
   });
